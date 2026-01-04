@@ -16,36 +16,46 @@ The repository integrates MLflow for experiment tracking and DagsHub for remote 
 
 ## 🗂️ Typical Project Structure
 ```
-Projects/
-├── config/
-│   └── config.yaml
-│
-├── src/
-│   └── mlProject/
-│       ├── components/
-│       │   ├── data_ingestion.py
-│       │   ├── data_validation.py
-│       │   ├── data_transformation.py
-│       │   ├── model_trainer.py
-│       │   └── model_evaluation.py
-│       │
-│       ├── pipeline/
-│       │   ├── stage_01_data_ingestion.py
-│       │   ├── stage_02_data_validation.py
-│       │   ├── stage_03_data_transformation.py
-│       │   ├── stage_04_model_trainer.py
-│       │   └── stage_05_model_evaluation.py
-│       │
-│       ├── config/
-│       ├── entity/
-│       ├── utils/
-│       └── logger/
-│
-├── artifacts/
-│
-├── main.py
-├── requirements.txt
-└── README.md
+ML-project-with-complete-MLops-pipeline/
+├── .dvc/                      # DVC configuration and metadata
+├── .github/
+│   └── workflows/             # GitHub Actions CI/CD workflows
+├── .idea/                     # IDE configuration (often IntelliJ/WebStorm/PyCharm)
+├── artifacts/                 # Generated output artifacts (models, reports, etc.)
+├── catboost_info/             # CatBoost training metadata
+├── mlruns/                    # Local MLflow run tracking
+│   └── 0/
+├── notebook/                  # Notebooks (Jupyter) for EDA / experiments
+├── src/                       # Source code
+│   ├── mlProject/
+│   │   ├── components/
+│   │   │   ├── data_ingestion.py
+│   │   │   ├── data_validation.py
+│   │   │   ├── data_transformation.py
+│   │   │   ├── model_trainer.py
+│   │   │   └── model_evaluation.py
+│   │   ├── pipeline/
+│   │   │   ├── stage_01_data_ingestion.py
+│   │   │   ├── stage_02_data_validation.py
+│   │   │   ├── stage_03_data_transformation.py
+│   │   │   ├── stage_04_model_trainer.py
+│   │   │   └── stage_05_model_evaluation.py
+│   │   ├── config/
+│   │   │   └── configuration.py
+│   │   ├── entity/
+│   │   │   └── config_entity.py
+│   │   ├── utils/
+│   │   │   └── common.py
+│   │   └── logger/             # Logging setup
+├── .dvcignore                 # Ignore rules for DVC
+├── .gitignore                 # Ignore rules for Git
+├── Dockerfile                 # Docker build definition
+├── README.md                  # Project documentation
+├── app.py                     # Application entry point (could be inference or pipeline start)
+├── mlflow.db                 # Local MLflow backend DB (SQLite)
+├── requirements.txt           # Python dependencies
+├── setup.py                   # Packaging setup (if used)
+└── template.py                # (Possibly a script template or example)
 ```
 
 ## 🛠️ How to Run a Project
